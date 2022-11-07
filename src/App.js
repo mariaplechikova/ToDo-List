@@ -1,12 +1,12 @@
 
 import './App.css';
-import TodoList from './pages/todo-list';
+import TodoListPage from './pages/todo-list-page';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
     <div className="App">
-      <TodoList />
+      <TodoListPage />
     </div>
   );
 }

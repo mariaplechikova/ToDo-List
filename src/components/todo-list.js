@@ -1,22 +1,25 @@
+/* eslint-disable react/prop-types */
 import Table from 'react-bootstrap/Table';
 import TodoListItem from './todo-list-item';
 
-function TodoList() {
+function TodoList(props) {
 
-    const list = [{
-        'name': "Посетить урок",
-        "date": "11.00.11",
-        "description": "Описание",
-        "tegs":  ["учеба"],
-        "prioriry": "высокий",
-    },
-    {
-        'name': "Приготовить обед",
-        "date": "12.00.11",
-        "description": "Описание обеда",
-        "tegs":  ["домашние дела"],
-        "prioriry": "средний",
-    }];
+//   const list = [{
+//     'name': "Посетить урок",
+//     "date": "11.00.11",
+//     "description": "Описание",
+//     "tegs":  ["учеба"],
+//     "prioriry": "высокий",
+// },
+// {
+//     'name': "Приготовить обед",
+//     "date": "12.00.11",
+//     "description": "Описание обеда",
+//     "tegs":  ["домашние дела"],
+//     "prioriry": "средний",
+// }];
+
+    
 
   return (
     <div className="">
@@ -32,7 +35,7 @@ function TodoList() {
         </tr>
       </thead>
       <tbody>
-        {list.map((item, index)=> (
+        {props.list.map((item, index)=> (
           <TodoListItem 
           item={item} 
           index={index + 1}
