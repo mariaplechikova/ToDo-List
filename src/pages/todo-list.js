@@ -1,4 +1,5 @@
 import Table from 'react-bootstrap/Table';
+import TodoListItem from './todo-list-item';
 
 function TodoList() {
 
@@ -8,6 +9,13 @@ function TodoList() {
         "description": "Описание",
         "tegs":  ["учеба"],
         "prioriry": "высокий",
+    },
+    {
+        'name': "Приготовить обед",
+        "date": "12.00.11",
+        "description": "Описание обеда",
+        "tegs":  ["домашние дела"],
+        "prioriry": "средний",
     }];
 
   return (
@@ -24,14 +32,21 @@ function TodoList() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>{list[0].name}</td>
-          <td>{list[0].date}</td>
-          <td>{list[0].description}</td>
-          <td>{list[0].tegs}</td>
-          <td>{list[0].prioriry}</td>
-        </tr>
+        {list.map((item, index)=> (
+          <TodoListItem 
+          item={item} 
+          index={index + 1}
+          key={index}
+        />
+        ))}
+          {/* <TodoListItem 
+            item={list[0]} 
+            index={1}
+          />
+          <TodoListItem 
+            item={list[1]} 
+            index={2}
+          /> */}
       </tbody>
     </Table>
     </div>
