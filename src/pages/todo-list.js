@@ -23,7 +23,7 @@ function TodoList() {
         <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
+          <th>###</th>
           <th>Название</th>
           <th>Дата и время</th>
           <th>Описание</th>
@@ -39,14 +39,6 @@ function TodoList() {
           key={index}
         />
         ))}
-          {/* <TodoListItem 
-            item={list[0]} 
-            index={1}
-          />
-          <TodoListItem 
-            item={list[1]} 
-            index={2}
-          /> */}
       </tbody>
     </Table>
     </div>
