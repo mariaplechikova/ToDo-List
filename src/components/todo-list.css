@@ -1,0 +1,10 @@
+.todo-list {
+    margin-top: 70px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: black;
+}
+
+.todo-list  thead {
+background-color: rgb(255, 189, 151);
+}

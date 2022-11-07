@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Table from 'react-bootstrap/Table';
 import TodoListItem from './todo-list-item';
+import './todo-list.css';
 
 function TodoList(props) {
 
@@ -22,7 +23,7 @@ function TodoList(props) {
     
 
   return (
-    <div className="">
+    <div className="todo-list">
         <Table striped bordered hover>
       <thead>
         <tr>
@@ -32,6 +33,7 @@ function TodoList(props) {
           <th>Описание</th>
           <th>Теги</th>
           <th>Приоритет</th>
+          <th>Действие</th>
         </tr>
       </thead>
       <tbody>
