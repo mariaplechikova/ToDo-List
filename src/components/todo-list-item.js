@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 import Button from "react-bootstrap/Button";
 
-
 const TodoListItem = function(props) {
+
+  // const buttonCloseStyle = {
+  //   display: props.item.status != "Завершено" ?'display': "none",
+  //   backgroundColor: "rgb(121, 185, 121)"
+  // };
+
     return (
         
             <tr>
@@ -15,7 +20,24 @@ const TodoListItem = function(props) {
               <td>{props.item.status}</td>
               <td>
                 <Button onClick={() => props.removeItem(props.index - 1)}>Удалить</Button>
-                <Button onClick={() => props.closeTask(props.index - 1)}>Завершить</Button>
+
+                {/* <Button 
+                  style={buttonCloseStyle}
+                  onClick={() => props.closeTask(props.index - 1)} 
+                  className="closeTask"
+                >Завершить
+                </Button> */}
+
+                <Button 
+                  className={
+                    {
+                      hide: props.item.status === "Завершено"
+                    }
+                  }
+                  onClick={() => props.closeTask(props.index - 1)}
+                >Завершить
+                </Button>
+                
               </td>
             </tr>
         
@@ -23,4 +45,13 @@ const TodoListItem = function(props) {
 };
 
 export default TodoListItem;
+
+// Альтернативная реализация удаления кнопки завершено
+// { props.item.status != "Завершено" ?
+// <Button 
+//   onClick={() => props.closeTask(props.index - 1)} className="closeTask"
+// >Завершить
+// </Button> :
+// null
+// }
  
