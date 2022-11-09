@@ -5,23 +5,6 @@ import './todo-list.css';
 
 function TodoList(props) {
 
-//   const list = [{
-//     'name': "Посетить урок",
-//     "date": "11.00.11",
-//     "description": "Описание",
-//     "tegs":  ["учеба"],
-//     "prioriry": "высокий",
-// },
-// {
-//     'name': "Приготовить обед",
-//     "date": "12.00.11",
-//     "description": "Описание обеда",
-//     "tegs":  ["домашние дела"],
-//     "prioriry": "средний",
-// }];
-
-    
-
   return (
     <div className="todo-list">
         <Table striped bordered hover>
@@ -33,6 +16,7 @@ function TodoList(props) {
           <th>Описание</th>
           <th>Теги</th>
           <th>Приоритет</th>
+          <th>Cтатус</th>
           <th>Действие</th>
         </tr>
       </thead>
@@ -42,6 +26,8 @@ function TodoList(props) {
           item={item} 
           index={index + 1}
           key={index}
+          removeItem={props.removeItem}
+          closeTask={props.closeTask}
         />
         ))}
       </tbody>

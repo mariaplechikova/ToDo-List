@@ -12,7 +12,11 @@ const TodoListItem = function(props) {
               <td>{props.item.description}</td>
               <td>{props.item.tegs}</td>
               <td>{props.item.prioriry}</td>
-              <td><Button>Удалить</Button></td>
+              <td>{props.item.status}</td>
+              <td>
+                <Button onClick={() => props.removeItem(props.index - 1)}>Удалить</Button>
+                <Button onClick={() => props.closeTask(props.index - 1)}>Завершить</Button>
+              </td>
             </tr>
         
       );
